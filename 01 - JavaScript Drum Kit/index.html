@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>JS Drum Kit</title>
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
 
@@ -57,27 +59,37 @@
   <audio data-key="75" src="sounds/tom.wav"></audio>
   <audio data-key="76" src="sounds/tink.wav"></audio>
 
-<script>
-  function removeTransition(e) {
-    if (e.propertyName !== 'transform') return;
-    e.target.classList.remove('playing');
-  }
+  <script>
+    const keys = document.querySelectorAll(".key")
 
-  function playSound(e) {
-    const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
-    const key = document.querySelector(`div[data-key="${e.keyCode}"]`);
-    if (!audio) return;
+    function playSound(event) {
+      let code = event.keyCode;
+      let audio = document.querySelector(`audio[data-key="${code}"`);
+      let key = document.querySelector(`.key[data-key="${code}"`)
 
-    key.classList.add('playing');
-    audio.currentTime = 0;
-    audio.play();
-  }
+      if (!audio && !key) return;
 
-  const keys = Array.from(document.querySelectorAll('.key'));
-  keys.forEach(key => key.addEventListener('transitionend', removeTransition));
-  window.addEventListener('keydown', playSound);
-</script>
+      audio.currentTime = 0;
+      audio.play();
+      key.classList.add("playing");
+    }
+
+    function removeTransition(event) {
+      if (event.propertyName === "transform") {
+        event.target.classList.remove("playing");
+      }
+    }
+
+    window.addEventListener("keydown", playSound);
+    keys.forEach(key => {
+      key.addEventListener("transitionend", removeTransition);
+    })
+
+
+
+  </script>
 
 
 </body>
+
 </html>
