@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Type Ahead 👀</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <form class="search-form">
+    <input type="text" class="search" placeholder="City or State">
+    <ul class="suggestions">
+      <li>Filter for a city</li>
+      <li>or a state</li>
+    </ul>
+  </form>
+  <script>
+    // Because the JSON file is local and static, you need a server to serve it.
+    const endpoint = 'cities.json';
+    const cities = [];
+    const input = document.querySelector(".search");
+    const suggestions = document.querySelector(".suggestions");
+
+    fetch(endpoint)
+      .then(response => response.json())
+      .then(data => {
+        cities.push(...data);
+        console.log(cities);
+      })
+      .catch(err => {
+        console.log(err);
+      })
+
+    function numberWithCommas(x) {
+      return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    }
+    
+    function findMatches(word) {
+      const regex = new RegExp(word, "gi");
+      return cities.filter(city => {
+        return city.city.match(regex) || city.state.match(regex);
+      })
+    }
+
+    function displayMatches() {
+      const matches = findMatches(this.value);
+      const regex = new RegExp(this.value, "gi");
+      const html = matches.map(city => {
+        const cityEl = city.city.replace(regex, `<span class="hl">${this.value}</span>`);
+        const stateEl = city.state.replace(regex, `<span class="hl">${this.value}</span>`);
+        return `
+          <li>  
+            <span > ${cityEl}, ${stateEl} </span>
+            <span class="population"> ${numberWithCommas(city.population)} </span>
+          </li>`
+      }).join(" ");
+      suggestions.innerHTML = html;
+    }
+
+    input.addEventListener("keyup", displayMatches);
+
+  </script>
+</body>
+
+</html>
