@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>HTML5 Canvas</title>
+</head>
+
+<body>
+  <canvas id="draw"> Color playground. Please upgrade your browser to use </canvas>
+  <script>
+    const canvas = document.querySelector("#draw");
+    const ctx = canvas.getContext("2d");
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    ctx.strokeStyle = "grey";
+    ctx.lineWidth = 50;
+    ctx.lineCap = "round";
+
+    let draw = false;
+    let x = 0;
+    let y = 0;
+    let hue = 0;
+    let direction = true;
+
+    function drawLine(e) {
+      if (!draw) return;
+
+      ctx.beginPath();
+      ctx.strokeStyle = `hsl(${hue}, 80%, 50%)`
+      ctx.moveTo(x, y);
+      ctx.lineTo(e.offsetX, e.offsetY);
+      ctx.stroke();
+      [x, y] = [e.offsetX, e.offsetY]; // update so the next movement starts from where the last movement ended.
+
+      hue++;
+      if (hue > 360) {
+        hue = 0;
+      }
+      
+      if (ctx.lineWidth >= 100 || ctx.lineWidth <= 1) {
+        direction = !direction;
+      }
+
+      if (direction) {
+        ctx.lineWidth++;
+      } else {
+        ctx.lineWidth--;
+      }
+
+    }
+
+    canvas.addEventListener("mousemove", drawLine);
+    canvas.addEventListener("mouseup", () => draw = false);
+    canvas.addEventListener("mouseout", () => draw = false);
+    canvas.addEventListener("mousedown", (e) => {
+      draw = true;
+      [x, y] = [e.offsetX, e.offsetY]; // set start position for line to the currently clicked coords.
+    });
+
+  </script>
+
+  <style>
+    html,
+    body {
+      margin: 0;
+      font-size: 3em;
+      text-align: center;
+      color: #333;
+    }
+  </style>
+
+</body>
+
+</html>
