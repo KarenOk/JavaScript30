@@ -60,7 +60,20 @@
 
     const images = document.querySelectorAll(".slide-in");
     function checkSlide (e) {
-      console.log(e)
+      images.forEach((image, index) => {
+        const imageMid = image.offsetTop + (image.height / 2);
+        const imageBottom = image.offsetTop + image.height;
+        const slidingWindowTop = window.scrollY + window.innerHeight;
+        
+        const isPastHalfway = slidingWindowTop > imageMid;
+        const isScrolledPast = window.scrollY > imageBottom;
+
+        if (isPastHalfway && !isScrolledPast){
+          image.classList.add("active");
+        } else {
+          image.classList.remove("active");
+        }
+      })
     }
 
     window.addEventListener("scroll", debounce(checkSlide))
