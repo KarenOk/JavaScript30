@@ -5,6 +5,10 @@
 		<title>Videos</title>
 
 		<style>
+			h3 {
+				text-align: center;
+			}
+
 			.videos {
 				list-style-type: none;
 				width: 60%;
@@ -25,6 +29,7 @@
 		</style>
 	</head>
 	<body>
+		<h3>Total time : <span class="total"> </span></h3>
 		<ul class="videos">
 			<li data-time="5:43">
 				<span>Video 1 </span>
@@ -259,6 +264,27 @@
 				<span>4:04</span>
 			</li>
 		</ul>
-		<script></script>
+		<script>
+			const timeNodes = [...document.querySelectorAll("[data-time]")];
+			const resultElem = document.querySelector(".total");
+
+			const totalSeconds = timeNodes
+				.map(node => node.dataset.time)
+				.map(time => {
+					const [mins, secs] = time.split(":").map(parseFloat);
+					return mins * 60 + secs;
+				})
+				.reduce((total, seconds) => total + seconds);
+
+			let secondsLeft = totalSeconds;
+
+			const hours = Math.floor(secondsLeft / 3600);
+			secondsLeft = secondsLeft % 3600;
+
+			const mins = Math.floor(secondsLeft / 60);
+			secondsLeft = secondsLeft % 60;
+
+			resultElem.innerHTML = `${hours}:${mins}:${secondsLeft}`;
+		</script>
 	</body>
 </html>
