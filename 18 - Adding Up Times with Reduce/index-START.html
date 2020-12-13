@@ -1,187 +1,264 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Videos</title>
-</head>
-<body>
-  <ul class="videos">
-    <li data-time="5:43">
-      Video 1
-    </li>
-    <li data-time="2:33">
-      Video 2
-    </li>
-    <li data-time="3:45">
-      Video 3
-    </li>
-    <li data-time="0:47">
-      Video 4
-    </li>
-    <li data-time="5:21">
-      Video 5
-    </li>
-    <li data-time="6:56">
-      Video 6
-    </li>
-    <li data-time="3:46">
-      Video 7
-    </li>
-    <li data-time="5:25">
-      Video 8
-    </li>
-    <li data-time="3:14">
-      Video 9
-    </li>
-    <li data-time="3:31">
-      Video 10
-    </li>
-    <li data-time="5:59">
-      Video 11
-    </li>
-    <li data-time="3:07">
-      Video 12
-    </li>
-    <li data-time="11:29">
-      Video 13
-    </li>
-    <li data-time="8:57">
-      Video 14
-    </li>
-    <li data-time="5:49">
-      Video 15
-    </li>
-    <li data-time="5:52">
-      Video 16
-    </li>
-    <li data-time="5:50">
-      Video 17
-    </li>
-    <li data-time="9:13">
-      Video 18
-    </li>
-    <li data-time="11:51">
-      Video 19
-    </li>
-    <li data-time="7:58">
-      Video 20
-    </li>
-    <li data-time="4:40">
-      Video 21
-    </li>
-    <li data-time="4:45">
-      Video 22
-    </li>
-    <li data-time="6:46">
-      Video 23
-    </li>
-    <li data-time="7:24">
-      Video 24
-    </li>
-    <li data-time="7:12">
-      Video 25
-    </li>
-    <li data-time="5:23">
-      Video 26
-    </li>
-    <li data-time="3:34">
-      Video 27
-    </li>
-    <li data-time="8:22">
-      Video 28
-    </li>
-    <li data-time="5:17">
-      Video 29
-    </li>
-    <li data-time="3:10">
-      Video 30
-    </li>
-    <li data-time="4:43">
-      Video 31
-    </li>
-    <li data-time="19:43">
-      Video 32
-    </li>
-    <li data-time="0:47">
-      Video 33
-    </li>
-    <li data-time="0:47">
-      Video 34
-    </li>
-    <li data-time="3:14">
-      Video 35
-    </li>
-    <li data-time="3:59">
-      Video 36
-    </li>
-    <li data-time="2:43">
-      Video 37
-    </li>
-    <li data-time="4:17">
-      Video 38
-    </li>
-    <li data-time="6:56">
-      Video 39
-    </li>
-    <li data-time="3:05">
-      Video 40
-    </li>
-    <li data-time="2:06">
-      Video 41
-    </li>
-    <li data-time="1:59">
-      Video 42
-    </li>
-    <li data-time="1:49">
-      Video 43
-    </li>
-    <li data-time="3:36">
-      Video 44
-    </li>
-    <li data-time="7:10">
-      Video 45
-    </li>
-    <li data-time="3:44">
-      Video 46
-    </li>
-    <li data-time="3:44">
-      Video 47
-    </li>
-    <li data-time="4:36">
-      Video 48
-    </li>
-    <li data-time="3:16">
-      Video 49
-    </li>
-    <li data-time="1:10">
-      Video 50
-    </li>
-    <li data-time="6:10">
-      Video 51
-    </li>
-    <li data-time="2:14">
-      Video 52
-    </li>
-    <li data-time="3:44">
-      Video 53
-    </li>
-    <li data-time="5:05">
-      Video 54
-    </li>
-    <li data-time="6:03">
-      Video 55
-    </li>
-    <li data-time="12:39">
-      Video 56
-    </li>
-    <li data-time="1:56">
-      Video 57
-    </li>
-    <li data-time="4:04">
-      Video 58
-    </li>
-  </ul>
-<script>
-</script>
-</body>
+	<head>
+		<meta charset="UTF-8" />
+		<title>Videos</title>
+
+		<style>
+			.videos {
+				list-style-type: none;
+				width: 60%;
+				max-width: 500px;
+				font-size: 1.2em;
+				margin: 20px auto 0;
+			}
+
+			.videos li {
+				display: flex;
+				justify-content: space-between;
+				margin-bottom: 10px;
+			}
+
+			.videos span:nth-child(2) {
+				color: #888;
+			}
+		</style>
+	</head>
+	<body>
+		<ul class="videos">
+			<li data-time="5:43">
+				<span>Video 1 </span>
+				<span>5:43</span>
+			</li>
+			<li data-time="2:33">
+				<span>Video 2 </span>
+				<span>2:33</span>
+			</li>
+			<li data-time="3:45">
+				<span>Video 3 </span>
+				<span>3:45</span>
+			</li>
+			<li data-time="0:47">
+				<span>Video 4 </span>
+				<span>0:47</span>
+			</li>
+			<li data-time="5:21">
+				<span>Video 5 </span>
+				<span>5:21</span>
+			</li>
+			<li data-time="6:56">
+				<span>Video 6 </span>
+				<span>6:56</span>
+			</li>
+			<li data-time="3:46">
+				<span>Video 7 </span>
+				<span>3:46</span>
+			</li>
+			<li data-time="5:25">
+				<span>Video 8 </span>
+				<span>5:25</span>
+			</li>
+			<li data-time="3:14">
+				<span>Video 9 </span>
+				<span>3:14</span>
+			</li>
+			<li data-time="3:31">
+				<span>Video 10 </span>
+				<span>3:31</span>
+			</li>
+			<li data-time="5:59">
+				<span>Video 11 </span>
+				<span>5:59</span>
+			</li>
+			<li data-time="3:07">
+				<span>Video 12 </span>
+				<span>3:07</span>
+			</li>
+			<li data-time="11:29">
+				<span>Video 13 </span>
+				<span>11:29</span>
+			</li>
+			<li data-time="8:57">
+				<span>Video 14 </span>
+				<span>8:57</span>
+			</li>
+			<li data-time="5:49">
+				<span>Video 15 </span>
+				<span>5:49</span>
+			</li>
+			<li data-time="5:52">
+				<span>Video 16 </span>
+				<span>5:52</span>
+			</li>
+			<li data-time="5:50">
+				<span>Video 17 </span>
+				<span>5:50</span>
+			</li>
+			<li data-time="9:13">
+				<span>Video 18 </span>
+				<span>9:13</span>
+			</li>
+			<li data-time="11:51">
+				<span>Video 19 </span>
+				<span>11:51</span>
+			</li>
+			<li data-time="7:58">
+				<span>Video 20 </span>
+				<span>7:58</span>
+			</li>
+			<li data-time="4:40">
+				<span>Video 21 </span>
+				<span>4:40</span>
+			</li>
+			<li data-time="4:45">
+				<span>Video 22 </span>
+				<span>4:45</span>
+			</li>
+			<li data-time="6:46">
+				<span>Video 23 </span>
+				<span>6:46</span>
+			</li>
+			<li data-time="7:24">
+				<span>Video 24 </span>
+				<span>7:24</span>
+			</li>
+			<li data-time="7:12">
+				<span>Video 25 </span>
+				<span>7:12</span>
+			</li>
+			<li data-time="5:23">
+				<span>Video 26 </span>
+				<span>5:23</span>
+			</li>
+			<li data-time="3:34">
+				<span>Video 27 </span>
+				<span>3:34</span>
+			</li>
+			<li data-time="8:22">
+				<span>Video 28 </span>
+				<span>8:22</span>
+			</li>
+			<li data-time="5:17">
+				<span>Video 29 </span>
+				<span>5:17</span>
+			</li>
+			<li data-time="3:10">
+				<span>Video 30 </span>
+				<span>3:10</span>
+			</li>
+			<li data-time="4:43">
+				<span>Video 31 </span>
+				<span>4:43</span>
+			</li>
+			<li data-time="19:43">
+				<span>Video 32 </span>
+				<span>19:43</span>
+			</li>
+			<li data-time="0:47">
+				<span>Video 33 </span>
+				<span>0:47</span>
+			</li>
+			<li data-time="0:47">
+				<span>Video 34 </span>
+				<span>0:47</span>
+			</li>
+			<li data-time="3:14">
+				<span>Video 35 </span>
+				<span>3:14</span>
+			</li>
+			<li data-time="3:59">
+				<span>Video 36 </span>
+				<span>3:59</span>
+			</li>
+			<li data-time="2:43">
+				<span>Video 37 </span>
+				<span>2:43</span>
+			</li>
+			<li data-time="4:17">
+				<span>Video 38 </span>
+				<span>4:17</span>
+			</li>
+			<li data-time="6:56">
+				<span>Video 39 </span>
+				<span>6:56</span>
+			</li>
+			<li data-time="3:05">
+				<span>Video 40 </span>
+				<span>3:05</span>
+			</li>
+			<li data-time="2:06">
+				<span>Video 41 </span>
+				<span>2:06</span>
+			</li>
+			<li data-time="1:59">
+				<span>Video 42 </span>
+				<span>1:59</span>
+			</li>
+			<li data-time="1:49">
+				<span>Video 43 </span>
+				<span>1:49</span>
+			</li>
+			<li data-time="3:36">
+				<span>Video 44 </span>
+				<span>3:36</span>
+			</li>
+			<li data-time="7:10">
+				<span>Video 45 </span>
+				<span>7:10</span>
+			</li>
+			<li data-time="3:44">
+				<span>Video 46 </span>
+				<span>3:44</span>
+			</li>
+			<li data-time="3:44">
+				<span>Video 47 </span>
+				<span>3:44</span>
+			</li>
+			<li data-time="4:36">
+				<span>Video 48 </span>
+				<span>4:36</span>
+			</li>
+			<li data-time="3:16">
+				<span>Video 49 </span>
+				<span>3:16</span>
+			</li>
+			<li data-time="1:10">
+				<span>Video 50 </span>
+				<span>1:10</span>
+			</li>
+			<li data-time="6:10">
+				<span>Video 51 </span>
+				<span>6:10</span>
+			</li>
+			<li data-time="2:14">
+				<span>Video 52 </span>
+				<span>2:14</span>
+			</li>
+			<li data-time="3:44">
+				<span>Video 53 </span>
+				<span>3:44</span>
+			</li>
+			<li data-time="5:05">
+				<span>Video 54 </span>
+				<span>5:05</span>
+			</li>
+			<li data-time="6:03">
+				<span>Video 55 </span>
+				<span>6:03</span>
+			</li>
+			<li data-time="12:39">
+				<span>Video 56 </span>
+				<span>12:3</span>
+			</li>
+			<li data-time="1:56">
+				<span>Video 57 </span>
+				<span>1:56</span>
+			</li>
+			<li data-time="4:04">
+				<span>Video 58 </span>
+				<span>4:04</span>
+			</li>
+		</ul>
+		<script></script>
+	</body>
 </html>
